@@ -33,7 +33,11 @@ height: 180px;
 	background-color: #090;
 }
 
-button{
+button {
+	background-color: cadetblue;
+	border-radius: 20px;
 	margin: 5px;
+	text-align: center;
+	font-size: 15px; 
 }
 
