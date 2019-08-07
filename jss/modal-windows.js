@@ -1,4 +1,4 @@
-var window = {
+var Window = {
   accept: null,
   number: 0,
   getAccept: function() {
@@ -23,7 +23,7 @@ var window = {
   hideValidation: function() {
     var validationDiv = document.getElementsByClassName('validation')[0];
     if (document.getElementsByClassName('validation')[0] !== undefined) {
-      window.deleteDivValidation();
+      Window.deleteDivValidation();
     }
   },
   hideModalWindow: function() {
@@ -34,25 +34,25 @@ var window = {
   },
   InputFocus: function() {
     var input = document.getElementById('cellnumber');
-    input.onfocus = window.hideValidation;
+    input.onfocus = Window.hideValidation;
   },
   Accept: function() {
-    window.accept = window.getAccept();
-    window.accept.onclick = window.setBoardDimension;
+    Window.accept = Window.getAccept();
+    Window.accept.onclick = Window.setBoardDimension;
   },
   setBoardDimension: function() {
-    window.number = window.getNumberFromInput();
-    var onlyNumbers = Validation.onlyNumbers(window.number);
-    var includedNumber = Validation.includedNumber(5, 20, window.number);
+    Window.number = Window.getNumberFromInput();
+    var onlyNumbers = Validation.onlyNumbers(Window.number);
+    var includedNumber = Validation.includedNumber(5, 20, Window.number);
     if (onlyNumbers && includedNumber) {
-      window.hideModalWindow(); // Hide modal window
-      Board.rows = window.number; // Set the number of rows of the board equal input number
-      Board.columns = window.number; // Set the number of colums of the board equal input number
+      Window.hideModalWindow(); // Hide modal window
+      Board.rows = Window.number; // Set the number of rows of the board equal input number
+      Board.columns = Window.number; // Set the number of colums of the board equal input number
       Game.init(); // init the game
       Game.start(); // start the game
     } else {
     if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
-      window.createDivValidation(); // Create and insert a div with the validation
+      Window.createDivValidation(); // Create and insert a div with the validation
       }
     }
   }
