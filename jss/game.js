@@ -1,58 +1,51 @@
 var Game = {
 	next: null,
 	play: null,
+	reset: null,
+	save: null,
 	board: null,
 	cells: null,
-	save: null,
-	reset: null,
-	interval:null,
+	interval: null,
 	showGame: function() {
-		document.getElementsByClassName('game')[0].style.display = 'flex';
+	  document.getElementsByClassName('game')[0].style.display = 'flex';
 	},
 	init: function() {
-		Game.showGame();
-		Board.createCells();
-		Board.dynamicBoard();
-		if(localStorage.getItem('game') != null) {
-			storage.loadGame();
-		}
-		Game.Board = Board.getBoard();
-		Game.cells = Board.getCells();
-		Game.reset = document.getElementById('reset');
-		Game.next = document.getElementById('next');
-		Game.play = document.getElementById('play');
-		Game.save = document.getElementById('save');
-
+	  Game.showGame();
+	  Board.createCells();
+	  Board.dynamicBoard();
+	  if (localStorage.getItem('game') != null) {
+		Storage.loadGame();
+	  }
+	  Game.board = Board.getBoard();
+	  Game.cells = Board.getCells();
+	  Game.next = document.getElementById('next');
+	  Game.play = document.getElementById('play');
+	  Game.reset = document.getElementById('reset');
+	  Game.save = document.getElementById('save');
 	},
 	start: function() {
-		for (var i = 0; i < Game.cells.length; i++) {
-			Game.cells[i].onclick = Cell.toggle;
-		}
-		Game.next.onclick = Board.nextStep;
-		Game.play.onclick = Game.update;
-		Game.reset.onclick = Game.resetGame;
-		Game.save.onclick = Game.saveGame;
+	  for (var i = 0; i < Game.cells.length; i++) {
+		Game.cells[i].onclick = Cell.toggle;
+	  }
+	  Game.reset.onclick = Board.reset;
+	  Game.next.onclick = Board.nextStep;
+	  Game.play.onclick = Game.update;
+	  Game.save.onclick = Game.saveGame;
 	},
 	update: function() {
-		if (Game.play.innerHTML === 'Play') {
-			Game.interval = setInterval(Board.nextStep, 1000);
-			Game.play.innerHTML = 'Stop';// changes button play to stop
-			Game.next.disabled = true; //disabled button next
-		  } else {
-			clearInterval(Game.interval);
-			Game.play.innerHTML = 'Play';//changes button stop to play 
-			Game.next.disabled = false;//enables button next
-		  }
-	},
-	resetGame: function() {
-		Board.createCells();//creates board
-		Game.play.innerHTML = 'Stop'; // Play button as stop button
-		Game.update(); // Stop the Game
-		Game.start(); // Game start
+	  if (Game.play.innerHTML === 'Play!') {
+		Game.interval = setInterval(Board.nextStep, 1000);
+		Game.play.innerHTML = 'Stop!';
+		Game.next.disabled = true;
+	  } else {
+		clearInterval(Game.interval);
+		Game.play.innerHTML = 'Play!';
+		Game.next.disabled = false;
+	  }
 	},
 	saveGame: function() {
-		Game.play.innerHTML = 'Stop!'; //play button as stop button
-		Game.update(); //stop the game
-		storage.saveGame(); //save game on local storage
+	  Game.play.innerHTML = 'Stop'; // Play button as stop button
+	  Game.update(); // Stop the Game
+	  Storage.saveGame(); // Save Game on local storage
 	}
 };

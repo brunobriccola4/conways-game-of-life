@@ -1,10 +1,10 @@
-var storage = {
+var Storage = {
   game: null,
   cancelButton: null,
   loadButton: null,
   saveGame: function() {
-    storage.game = document.getElementsByClassName('game')[0].innerHTML;
-    localStorage.setItem('game', storage.game);
+    Storage.game = document.getElementsByClassName('game')[0].innerHTML;
+    localStorage.setItem('game', Storage.game);
     localStorage.setItem('columns',Board.columns);
     alert('Game saved');
   },
@@ -17,10 +17,10 @@ var storage = {
     document.getElementsByClassName('modalwindow-storage')[0].style.display = 'none';
   },
   loadWindow: function() {
-    storage.cancelButton = document.getElementById('cancel');
-    storage.loadButton = document.getElementById('load');
-    storage.cancelButton.onclick = storage.cancel;
-    storage.loadButton.onclick = storage.load;
+    Storage.cancelButton = document.getElementById('cancel');
+    Storage.loadButton = document.getElementById('load');
+    Storage.cancelButton.onclick = Storage.cancel;
+    Storage.loadButton.onclick = Storage.load;
   },
   cancel: function() {
     localStorage.removeItem('game');
@@ -28,7 +28,7 @@ var storage = {
     window.onload();
   },
   load: function() {
-    storage.hideLoad();
+    Storage.hideLoad();
     Game.init();
     Game.start();
   }

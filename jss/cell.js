@@ -7,4 +7,4 @@ var Cell = {
 			cell.className = 'alive';
 		}	
 	}
-}
+};

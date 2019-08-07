@@ -1,19 +1,17 @@
-var Play = function() {
-	var liAlives = Board.getCells();
-	Board.updateCells(liAlives)
+var play = function() {
+	var cells = Board.getCells();
+	Board.updateCells(cells);
 }
-
-var init = function() {
-	if(localStorage.getItem('game' != null)) 
-	{
-		Window.hideModalWindow();
-		storage.loadWindow();
+var init = function() { // Its execute after loading the HTML
+	if (localStorage.getItem('game') != null) {
+	  Window.hideModalWindow();
+	  Storage.loadWindow();
 	} else {
-		storage.hideLoad();
-		Window.Accept()
-		Window.InputFocus();
-	}
+	  Storage.hideLoad();
+	  Window.Accept();
+	  Window.InputFocus();
+		}
 }
-window.onload = init; 
+window.onload = init;
 
 
