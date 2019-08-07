@@ -1,0 +1,115 @@
+.modalwindow {
+	display: flex;
+	/* flex-wrap: wrap; */
+	position: fixed;
+	/* z-index: 1; */
+    width: 100%;
+	height: 100%;
+    left: 0;
+	top: 0;
+	overflow: auto;
+	background: #F0F2F0;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #000C40, #F0F2F0);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 20px;
+}
+  
+.modalwindow .content {
+	width: 40%;
+	height: auto;
+	margin: auto;
+	padding: 20px;
+	overflow: visible;
+	background-color: rgba(33, 10, 241, 0.781);
+	animation-name: animatetop;
+	animation-duration: 2s;
+	border: 4px solid #888;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  
+legend {
+	margin: 5px;
+	border-bottom: 1px solid rgba(247, 247, 250, 0.781);
+	font: normal 2em arial, sans-serif;
+}
+  
+form div {
+	height: 125px;
+	border-bottom: 2px solid rgba(247, 247, 250, 0.781);
+	border-radius: 10px;
+}
+  
+label {
+	display: block;
+	color: rgb(118, 124, 170);
+	font: normal 1.5em arial, sans-serif;
+}
+  
+input[type='text'] {
+	display: inline;
+	padding: 8px;
+	margin-top: 5px;
+	border-radius: 10px;
+	border: 4px solid #888;
+}
+  
+input[type='text']:hover, input[type='text']:focus {
+	outline: none !important;
+	border: 1px solid rgb(187, 215, 92);
+}
+  
+p.help {
+	display: none;
+	color: #888;
+}
+  
+input[type='text']:focus+p.help {
+	display: inline;
+	position: relative;
+	top: 0;
+	right: 0;
+	width: auto;
+}
+  
+input[type='button'] {
+	position: relative;
+	float: right;
+	margin: .5em 3em .5em 0;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 4px solid rgba(243, 243, 245, 0.699);
+	font-size: 1.3em;
+}
+  
+input[type='button']:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+  
+.validation {
+	display: flex;
+	align-items: center;
+	/* Center vertically /*
+	/* justify-content: center;  /* Center Horizontally */
+	height: 2em;
+	padding-left: 5px;
+	margin-bottom: 5px;
+	background-color: rgb(110, 109, 109);
+	border: 4px solid rgb(20, 20, 20);
+	font: normal 1em arial, sans-serif;
+}
+  
+.validation strong {
+	font-weight: bold;
+}
+  
+@keyframes animatetop {
+	from {
+	  top -300px;
+	  opacity: 0;
+	}
+	to {
+	  top: 0;
+	  opacity: 1;
+	}
+}
