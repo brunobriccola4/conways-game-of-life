@@ -1,0 +1,44 @@
+.modalwindow-storage {
+    display: flex;
+    flex-wrap: wrap;
+    position: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #F0F2F0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #000C40, #F0F2F0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+  
+.modalwindow-storage .content {
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgba(251, 251, 253, 0.781);
+    overflow: visible;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(33, 10, 241, 0.781);
+    animation-name: animatetop;
+    animation-duration: 1s
+}
+  
+.modalwindow-storage .content p {
+    font: normal 1em arial, sans-serif;
+}
+  
+#load {
+    float: left;
+    position: relative;
+    margin-top: 20px;
+}
+  
+#cancel {
+    float: right;
+    position: relative;
+    margin-top: 20px;        
+}
