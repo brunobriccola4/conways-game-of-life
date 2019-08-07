@@ -25,9 +25,9 @@ var GameOfLife = {
 		return board;
 	},
 	getNextStep: function (a, b) {
-		for (var i = 0; i < a.length; i++){
+		for (var i = 0; i < a.length; i++) {
 			var row = a[i];
-			for (var j = 0;j < row.length; j++){
+			for (var j = 0;j < row.length; j++) {
 				var willBeAlive = GameOfLife.applyRule(a, i, j);
 				if (willBeAlive) {
 					b[i][j] = true;

@@ -6,8 +6,16 @@ var Game = {
 	save: null,
 	reset: null,
 	interval:null,
-	init: function () {
+	showGame: function() {
+		document.getElementsByClassName('game')[0].style.display = 'flex';
+	},
+	init: function() {
+		Game.showGame();
 		Board.createCells();
+		Board.dynamicBoard();
+		if(localStorage.getItem('game') != null) {
+			storage.loadGame();
+		}
 		Game.Board = Board.getBoard();
 		Game.cells = Board.getCells();
 		Game.reset = document.getElementById('reset');
@@ -16,8 +24,8 @@ var Game = {
 		Game.save = document.getElementById('save');
 
 	},
-	start: function () {
-		for (var i = 0; i < Game.cells.length; i++){
+	start: function() {
+		for (var i = 0; i < Game.cells.length; i++) {
 			Game.cells[i].onclick = Cell.toggle;
 		}
 		Game.next.onclick = Board.nextStep;
@@ -25,7 +33,7 @@ var Game = {
 		Game.reset.onclick = Game.resetGame;
 		Game.save.onclick = Game.saveGame;
 	},
-	update: function () {
+	update: function() {
 		if (Game.play.innerHTML === 'Play') {
 			Game.interval = setInterval(Board.nextStep, 1000);
 			Game.play.innerHTML = 'Stop';// changes button play to stop
@@ -43,7 +51,8 @@ var Game = {
 		Game.start(); // Game start
 	},
 	saveGame: function() {
-		Game.play.innerHTML = 'Stop';
-		Game.update();
+		Game.play.innerHTML = 'Stop!'; //play button as stop button
+		Game.update(); //stop the game
+		storage.saveGame(); //save game on local storage
 	}
 };
