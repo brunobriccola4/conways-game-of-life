@@ -22,7 +22,8 @@ var Game = {
 		}
 		Game.next.onclick = Board.nextStep;
 		Game.play.onclick = Game.update;
-		Game.reset.onclick = Game.resetGame;	
+		Game.reset.onclick = Game.resetGame;
+		Game.save.onclick = Game.saveGame;
 	},
 	update: function () {
 		if (Game.play.innerHTML === 'Play') {
@@ -35,10 +36,14 @@ var Game = {
 			Game.next.disabled = false;//enables button next
 		  }
 	},
-	resetGame: function () {
+	resetGame: function() {
 		Board.createCells();//creates board
 		Game.play.innerHTML = 'Stop'; // Play button as stop button
 		Game.update(); // Stop the Game
 		Game.start(); // Game start
+	},
+	saveGame: function() {
+		Game.play.innerHTML = 'Stop';
+		Game.update();
 	}
 };
