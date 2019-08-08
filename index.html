@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>JavaScript 1</title>
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/mwindows.css">
-		<link rel="stylesheet" href="css/mwindows-storage.css">
-		<script type="text/JavaScript" src="jss/validation.js"></script>
-		<script type="text/JavaScript" src="jss/local-storage.js"></script>
-		<script type="text/JavaScript" src="jss/game-of-life.js"></script>
-		<script type="text/JavaScript" src="jss/modal-windows.js"></script>
-		<script type="text/JavaScript" src="jss/cell.js"></script>
-		<script type="text/JavaScript" src="jss/board.js"></script>
-		<script type="text/JavaScript" src="jss/game.js"></script>
-		<script type="text/JavaScript" src="jss/app.js"></script>
-	</head>
-	<body>
-		<div class="modalwindow-storage">
-			<div class="content">
-				<p>Do you want to load the saved game?</p>
-				<button id="load" type="button" name="load">Load</button>
-				<button id="cancel" type="button" name="cancel">Cancel</button>
-			</div>
-		</div>
-		<div class="modalwindow">
-			<div class="content">
-				<form class="form" method="post">
-					<legend>Conways Game of Life</legend>
-					<div class="formCells">
-						<label for="cells">Number of cells</label>
-						<input id="cellnumber" type="text" name="cells"/>
-						<p class="help">Numeric value between 5 and 20.</p>
-					</div>
-					<input id="accept" type="button" value="Accept"/>
-				</form>
-			</div>
-		</div>
-		<div class="game">
-			<ul class="board">	</ul>
-			<div class="buttons">
-				<button id="play" type="button" name="play">Play!</button>
-				<button id="next" type="button" name="next">Next</button>
-				<button id="save" type="button" name="save">Save</button>
-				<button id="reset" type="button" name="reset">Reset</button>
-			</div>
-		</div>	
-	</body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 1</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mwindows.css">
+  <link rel="stylesheet" href="css/mwindows-storage.css">
+  <script type="text/JavaScript" src="jss/validation.js"></script>
+  <script type="text/JavaScript" src="jss/local-storage.js"></script>
+  <script type="text/JavaScript" src="jss/game-of-life.js"></script>
+  <script type="text/JavaScript" src="jss/modal-windows.js"></script>
+  <script type="text/JavaScript" src="jss/cell.js"></script>
+  <script type="text/JavaScript" src="jss/board.js"></script>
+  <script type="text/JavaScript" src="jss/game.js"></script>
+  <script type="text/JavaScript" src="jss/app.js"></script>
+</head>
+
+<body>
+  <div class="modalwindow-storage">
+    <div class="content">
+      <p>Do you want to load the saved game?</p>
+      <button id="load" type="button" name="load">Load</button>
+      <button id="cancel" type="button" name="cancel">Cancel</button>
+    </div>
+  </div>
+  <div class="modalwindow">
+    <div class="content">
+      <form class="form" method="post">
+        <legend>Conways Game of Life</legend>
+        <div class="formCells">
+          <label for="cells">Number of cells</label>
+          <input id="cellnumber" type="text" name="cells" />
+          <p class="help">Numeric value between 5 and 20.</p>
+        </div>
+        <input id="accept" type="button" value="Accept" />
+      </form>
+    </div>
+  </div>
+  <div class="game">
+    <ul class="board"> </ul>
+    <div class="buttons">
+      <button id="play" type="button" name="play">Play!</button>
+      <button id="next" type="button" name="next">Next</button>
+      <button id="save" type="button" name="save">Save</button>
+      <button id="reset" type="button" name="reset">Reset</button>
+    </div>
+  </div>
+</body>
+
 </html>

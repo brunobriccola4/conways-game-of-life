@@ -1,13 +1,13 @@
 var Window = {
   accept: null,
   number: 0,
-  getAccept: function() {
+  getAccept: function () {
     return document.getElementById('accept');
   },
-  getNumberFromInput: function() {
+  getNumberFromInput: function () {
     return document.getElementById('cellnumber').value;
   },
-  createDivValidation: function() {
+  createDivValidation: function () {
     var formCells = document.getElementsByClassName('formCells')[0]; // Div with class formCells
     var Validation = document.createElement("div"); // New node, element div
     Validation.className = 'validation';
@@ -15,32 +15,32 @@ var Window = {
     parentDiv.insertBefore(Validation, formCells); // Add node validation to HTML
     Validation.innerHTML = 'Enter a <strong>&nbsp;"number"&nbsp;</strong> between <strong>&nbsp;"5 and 20"&nbsp;</strong>';
   },
-  deleteDivValidation: function() {
+  deleteDivValidation: function () {
     var validationDiv = document.getElementsByClassName('validation')[0];
     var parentDiv = validationDiv.parentNode; // Parent of Validation
     parentDiv.removeChild(validationDiv); // Add node validation to HTML
   },
-  hideValidation: function() {
+  hideValidation: function () {
     var validationDiv = document.getElementsByClassName('validation')[0];
     if (document.getElementsByClassName('validation')[0] !== undefined) {
       Window.deleteDivValidation();
     }
   },
-  hideModalWindow: function() {
+  hideModalWindow: function () {
     document.getElementsByClassName('modalwindow')[0].style.display = 'none';
   },
-  showModalWindow: function() {
+  showModalWindow: function () {
     document.getElementsByClassName('modalwindow')[0].style.display = 'flex';
   },
-  InputFocus: function() {
+  InputFocus: function () {
     var input = document.getElementById('cellnumber');
     input.onfocus = Window.hideValidation;
   },
-  Accept: function() {
+  Accept: function () {
     Window.accept = Window.getAccept();
     Window.accept.onclick = Window.setBoardDimension;
   },
-  setBoardDimension: function() {
+  setBoardDimension: function () {
     Window.number = Window.getNumberFromInput();
     var onlyNumbers = Validation.onlyNumbers(Window.number);
     var includedNumber = Validation.includedNumber(5, 20, Window.number);
@@ -51,21 +51,22 @@ var Window = {
       Game.init(); // init the game
       Game.start(); // start the game
     } else {
-    if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
-      Window.createDivValidation(); // Create and insert a div with the validation
+      if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
+        Window.createDivValidation(); // Create and insert a div with the validation
       }
     }
   }
-};var Window = {
+};
+var Window = {
   accept: null,
   number: 0,
-  getAccept: function() {
+  getAccept: function () {
     return document.getElementById('accept');
   },
-  getNumberFromInput: function() {
+  getNumberFromInput: function () {
     return document.getElementById('cellnumber').value;
   },
-  createDivValidation: function() {
+  createDivValidation: function () {
     var formCells = document.getElementsByClassName('formCells')[0]; // Div with class formCells
     var Validation = document.createElement("div"); // New node, element div
     Validation.className = 'validation';
@@ -73,32 +74,32 @@ var Window = {
     parentDiv.insertBefore(Validation, formCells); // Add node validation to HTML
     Validation.innerHTML = 'Enter a <strong>&nbsp;"number"&nbsp;</strong> between <strong>&nbsp;"5 and 20"&nbsp;</strong>';
   },
-  deleteDivValidation: function() {
+  deleteDivValidation: function () {
     var validationDiv = document.getElementsByClassName('validation')[0];
     var parentDiv = validationDiv.parentNode; // Parent of Validation
     parentDiv.removeChild(validationDiv); // Add node validation to HTML
   },
-  hideValidation: function() {
+  hideValidation: function () {
     var validationDiv = document.getElementsByClassName('validation')[0];
     if (document.getElementsByClassName('validation')[0] !== undefined) {
       Window.deleteDivValidation();
     }
   },
-  hideModalWindow: function() {
+  hideModalWindow: function () {
     document.getElementsByClassName('modalwindow')[0].style.display = 'none';
   },
-  showModalWindow: function() {
+  showModalWindow: function () {
     document.getElementsByClassName('modalwindow')[0].style.display = 'flex';
   },
-  InputFocus: function() {
+  InputFocus: function () {
     var input = document.getElementById('cellnumber');
     input.onfocus = Window.hideValidation;
   },
-  Accept: function() {
+  Accept: function () {
     Window.accept = Window.getAccept();
     Window.accept.onclick = Window.setBoardDimension;
   },
-  setBoardDimension: function() {
+  setBoardDimension: function () {
     Window.number = Window.getNumberFromInput();
     var onlyNumbers = Validation.onlyNumbers(Window.number);
     var includedNumber = Validation.includedNumber(5, 20, Window.number);
@@ -109,8 +110,8 @@ var Window = {
       Game.init(); // init the game
       Game.start(); // start the game
     } else {
-    if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
-      Window.createDivValidation(); // Create and insert a div with the validation
+      if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
+        Window.createDivValidation(); // Create and insert a div with the validation
       }
     }
   }

@@ -1,5 +1,5 @@
 Validation = {
-  onlyNumbers: function(text) {
+  onlyNumbers: function (text) {
     var expOnlyNumber = /^[0-9]+$/;
     if (text.match(expOnlyNumber)) {
       return true;
@@ -7,7 +7,7 @@ Validation = {
       return false;
     }
   },
-  includedNumber: function(firstNumber, secondNumber, number) {
+  includedNumber: function (firstNumber, secondNumber, number) {
     if (number >= firstNumber && number <= secondNumber) {
       return true;
     } else {
